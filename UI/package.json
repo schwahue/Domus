@@ -11,12 +11,15 @@
   "author": "Domus Devs",
   "license": "MIT",
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.2",
     "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
+    "aws-sdk": "^2.1046.0",
     "framer-motion": "^4.1.17",
     "next": "^12.0.4",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-table": "^7.7.0"
   }
 }
