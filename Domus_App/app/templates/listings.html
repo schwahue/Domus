@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Properties on Sale
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="header"> 
+        <h1>Properties on Sale</h1> 
+    </div>
+    &nbsp;
+    <form class="row row-cols-lg-auto g-3 align-items-center">
+
+
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+            <select class="form-select" id="inlineFormSelectPref">
+              <option selected>Districts</option>
+              <option>Woodlands</option>
+              <option>Tampines</option>
+              <option>Commonwealth</option>
+            </select>
+          </div>
+
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+            <select class="form-select" id="inlineFormSelectPref">
+              <option selected>Type</option>
+              <option>Condominium</option>
+              <option>HDB</option>
+              <option>Landed</option>
+            </select>
+          </div>
+      
+        <div class="col-12">
+          <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+          <select class="form-select" id="inlineFormSelectPref">
+            <option selected>Bedroom</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+            <select class="form-select" id="inlineFormSelectPref">
+              <option selected>Price</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+      
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+      </form>
+
+      &nbsp;
+
+    <div class="card" style="width: 80rem;">
+        <img src="..." class="card-img-top" alt="Image goes here">
+        <div class="card-header">
+            <b>Choa Chu Kang</b>
+        </div>
+        <div class="card-body">
+        <h5 class="card-title">Choa Chu Kang Ave 5 #11-589</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p>Listed by: Mr Ben Tan</p>
+        <a href="#" class="btn btn-primary" style="float: right;">More Details</a>
+        </div>
+  </div>
+</div>
+{% endblock %}
