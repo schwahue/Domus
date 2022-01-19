@@ -15,6 +15,11 @@ def index():
 def admin_index():
     return render_template("admin-index.html", navigation_bar = admin_pages), 200
 
+ticketList = [('abc01', 'this is a ticket blah blah', 'resolved')]
+
 @router.route('/admin/ticketing')
 def admin_ticket():
-    return render_template("admin-ticketing.html", navigation_bar = admin_pages, active_page='ticketing'), 200
+    
+    return render_template("admin-ticketing.html",  navigation_bar = admin_pages,
+                                                    active_page='ticketing',
+                                                    ticketList = ticketList ), 200
