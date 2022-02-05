@@ -1,5 +1,16 @@
 from flask import Blueprint, render_template
 
+# Modules needed by Wilfred (maybe)
+# from flask import Flask, render_template, redirect, url_for
+# from flask_bootstrap import Bootstrap
+# from flask_wtf import FlaskForm 
+# from wtforms import StringField, PasswordField, BooleanField
+# from wtforms.validators import InputRequired, Email, Length
+# from flask_sqlalchemy  import SQLAlchemy
+# from werkzeug.security import generate_password_hash, check_password_hash
+# from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+
+
 router = Blueprint('router', __name__, template_folder='templates')
 
 # This will help to render the navigation bar items [(href, id, caption)]
@@ -23,3 +34,22 @@ def admin_ticket():
     return render_template("admin-ticketing.html",  navigation_bar = admin_pages,
                                                     active_page='ticketing',
                                                     ticketList = ticketList ), 200
+
+
+# CRUD
+# List seller property
+# Seller property page controls
+
+# TODO: Use Cognito
+@router.route('/user/login')
+def simple_login():
+    return login_page("property/login.html")
+
+
+# TODO: Use RDS
+@router.route('/user/property')
+def admin_ticket():
+    return render_template("admin-ticketing.html")
+
+# 
+
