@@ -1,0 +1,24 @@
+[{
+	"type_str": "HDB",
+	"district_str": "Woodlands",
+	"bedroom_str": "4",
+	"price_str": "$500 000",
+	"address_str": "Woodlands Street 17 Block 622 #11-111",
+    "listed_by_str": "Ben Tan"
+},{
+	
+	"type_str": "Condominium",
+	"district_str": "Pasir Ris",
+	"bedroom_str": "5",
+	"price_str": "$1 699 000",
+	"address_str": "Pasir Ris Drive 3",
+    "listed_by_str": "Julien Low"
+},{
+	
+	"type_str": "Landed",
+	"district_str": "Upper Thomson",
+	"bedroom_str": "5",
+	"price_str": "$3 480 000",
+	"address_str": "40 Springside Link",
+    "listed_by_str": "Thomas Ng"
+}]

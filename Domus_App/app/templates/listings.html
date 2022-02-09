@@ -25,9 +25,9 @@ Properties on Sale
           </div>
 
         <div class="col-12">
-            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+            <label class="visually-hidden" data-role="type-select" data-action="choose_type" for="inlineFormSelectPref">Preference</label>
             <select class="form-select" id="inlineFormSelectPref">
-              <option selected>Type</option>
+              <option selected="All Types">All Types</option>
               <option>Condominium</option>
               <option>HDB</option>
               <option>Landed</option>
@@ -54,14 +54,14 @@ Properties on Sale
             </select>
           </div>
       
-        <div class="col-12">
+        <!-- <div class="col-12">
           <button type="submit" class="btn btn-primary">Filter</button>
-        </div>
+        </div> -->
       </form>
 
       &nbsp;
 
-    <div class="card" style="width: 80rem;">
+    <!-- <div class="card" style="width: 80rem;">
         <img src="..." class="card-img-top" alt="Image goes here">
         <div class="card-header">
             <b>Choa Chu Kang</b>
@@ -72,6 +72,17 @@ Properties on Sale
         <p>Listed by: Mr Ben Tan</p>
         <a href="#" class="btn btn-primary" style="float: right;">More Details</a>
         </div>
-  </div>
+  </div> -->
 </div>
+
+<h3 data-role="filter_type" style="margin-left:125px;">Showing all properties</h3>
+<section data-role="property_info" data-showing="not_showing">
+
+</section>
+
+
+<script src="config.js"></script>
+<script src="jquery-3.4.0.min.js"></script>
+<script src="listings.js"></script>
+
 {% endblock %}
