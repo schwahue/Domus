@@ -5,78 +5,227 @@ Properties on Sale
 {% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <div class="container">
-    <div class="header"> 
-        <h1>Properties on Sale</h1> 
+  <div class="row">
+  <br />
+  <div class="header"> 
+    <h1>Properties on Sale</h1> 
+  </div>
+  <br />
+  <div class="row row-cols-lg-auto g-3 align-items-center" style="width: 50rem;">
+
+    <h3>&nbsp Filter Search</h3>
+    <div class="col-12">
+        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+        <select class="form-select" id="district">
+          <option selected>All Districts</option>
+          <option value="Boat Quay, Chinatown, Havelock Road,Marina Square, Raffles Place, Suntec City">Boat Quay, Chinatown, Havelock Road, Marina Square, Raffles Place, Suntec City</option>
+          <option value="Anson Road, Chinatown, Neil Road, Raffles Place, Shenton Way, Tanjong Pagar">Anson Road, Chinatown, Neil Road, Raffles Place, Shenton Way, Tanjong Pagar</option>
+          <option value="Alexandra Road, Tiong Bahru, Queenstownu">Alexandra Road, Tiong Bahru, Queenstown</option>
+          <option value="Keppel, Mount Faber, Sentosa, Telok Blangah">Keppel, Mount Faber, Sentosa, Telok Blangah</option>
+          <option value="Buona Vista, Dover, Pasir Panjang, West Coast">Buona Vista, Dover, Pasir Panjang, West Coast</option>
+          <option value="City Hall, High Street, North Bridge Road">City Hall, High Street, North Bridge Road</option>
+          <option value="Beach Road, Bencoolen Road, Bugis, Rochor">Beach Road, Bencoolen Road, Bugis, Rochor</option>
+          <option value="Little India, Farrer Park, Serangoon Road">Little India, Farrer Park, Serangoon Road</option>
+          <option value="Cairnhill, Killiney, Leonie Hill, Orchard, Oxley">Cairnhill, Killiney, Leonie Hill, Orchard, Oxley</option>
+          <option value="Balmoral, Bukit Timah, Grange Road, Holland, Orchard Boulevard, River Valley, Tanglin Road">Balmoral, Bukit Timah, Grange Road, Holland, Orchard Boulevard, River Valley, Tanglin Road</option>
+          <option value="Chancery, Bukit Timah, Dunearn Road, Newton">Chancery, Bukit Timah, Dunearn Road, Newton</option>
+          <option value="Balestier, Moulmein, Novena, Toa Payoh">Balestier, Moulmein, Novena, Toa Payoh</option>
+          <option value="Balestier, Toa Payoh, Serangoon">Balestier, Toa Payoh, Serangoon</option>
+          <option value="Potong Pasir, Machpherson">Potong Pasir, Machpherson</option>
+          <option value="Eunos, Geylang, Kembangan, Paya Lebar">Eunos, Geylang, Kembangan, Paya Lebar</option>
+          <option value="Katong, Marine Parade, Siglap, Tanjong Rhu">Katong, Marine Parade, Siglap, Tanjong Rhu</option>
+          <option value="Bayshore, Bedok, Chai Chee">Bayshore, Bedok, Chai Chee</option>
+          <option value="Loyang, Changi">Loyang, Changi</option>
+          <option value="Pasir Ris, Simei, Tampines">Pasir Ris, Simei, Tampines</option>
+          <option value="Hougang, Punggol, Sengkang">Hougang, Punggol, Sengkang</option>
+          <option value="Ang Mo Kio, Bishan, Braddell Road, Thomson">Ang Mo Kio, Bishan, Braddell Road, Thomson</option>
+          <option value="Clementi, Upper Bukit Timah, Hume Avenue">Clementi, Upper Bukit Timah, Hume Avenue</option>
+          <option value="Boon Lay, Jurong, Tuas">Boon Lay, Jurong, Tuas</option>
+          <option value="Bukit Batok, Choa Chu Kang, Hillview Avenue, Upper Bukit Timah">Bukit Batok, Choa Chu Kang, Hillview Avenue, Upper Bukit Timah</option>
+          <option value="Kranji, Lim Chu Kang, Sungei Gedong, Tengah">Kranji, Lim Chu Kang, Sungei Gedong, Tengah</option>
+          <option value="Admiralty, Woodlands">Admiralty, Woodlands</option>
+          <option value="Tagore, Yio Chu Kang">Tagore, Yio Chu Kang</option>
+          <option value="Yishun, Sembawang">Yishun, Sembawang</option>
+          <option value="Seletar">Seletar</option>
+        </select>
+      </div>
+
+    <div class="col-12">
+        <label class="visually-hidden" data-role="type-select" data-action="choose_type" for="inlineFormSelectPref">Preference</label>
+        <select class="form-select" id="property_type">
+          <option selected="All Types">All Property Types</option>
+          <option  value="Condominium">Condominium</option>
+          <option  value="HDB">HDB</option>
+          <option  value="Landed">Landed</option>
+        </select>
+      </div>
+  
+    <div class="col-12">
+      <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+      <select class="form-select" id="bedroom">
+        <option selected>All Bedroom</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
     </div>
-    &nbsp;
-    <form class="row row-cols-lg-auto g-3 align-items-center">
 
+  
+    <!-- <div class="col-12">
+      <button type="submit" class="btn btn-primary">Filter</button>
+    </div> -->
+  </div>
 
-        <div class="col-12">
-            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-            <select class="form-select" id="inlineFormSelectPref">
-              <option selected>Districts</option>
-              <option>Woodlands</option>
-              <option>Tampines</option>
-              <option>Commonwealth</option>
-            </select>
-          </div>
-
-        <div class="col-12">
-            <label class="visually-hidden" data-role="type-select" data-action="choose_type" for="inlineFormSelectPref">Preference</label>
-            <select class="form-select" id="inlineFormSelectPref">
-              <option selected="All Types">All Types</option>
-              <option>Condominium</option>
-              <option>HDB</option>
-              <option>Landed</option>
-            </select>
-          </div>
-      
-        <div class="col-12">
-          <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-          <select class="form-select" id="inlineFormSelectPref">
-            <option selected>Bedroom</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
-      
-        <div class="col-12">
-            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-            <select class="form-select" id="inlineFormSelectPref">
-              <option selected>Price</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-          </div>
-      
-        <!-- <div class="col-12">
-          <button type="submit" class="btn btn-primary">Filter</button>
-        </div> -->
-      </form>
-
-      &nbsp;
-
-    <!-- <div class="card" style="width: 80rem;">
-        <img src="..." class="card-img-top" alt="Image goes here">
-        <div class="card-header">
-            <b>Choa Chu Kang</b>
-        </div>
-        <div class="card-body">
-        <h5 class="card-title">Choa Chu Kang Ave 5 #11-589</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <p>Listed by: Mr Ben Tan</p>
-        <a href="#" class="btn btn-primary" style="float: right;">More Details</a>
-        </div>
-  </div> -->
+      <div class="col-md-3">                                
+          <div class="list-group">
+              <h2 style="padding-top: 30px;">Price</h2>
+              <input type="hidden" id="hidden_minimum_price" value="0" />
+              <input type="hidden" id="hidden_maximum_price" value="65000" />
+              <p id="price_show">S$100 000 - S$3 000 000</p>
+              <div id="price_range"></div>
+          </div>                
+      </div>
+      <div class="col-md-9">
+         <div class="row filter_data">
+      </div>
+  </div>
+  </div>
 </div>
+<style>
+#loading
+{
+  text-align:center; 
+  background: url('images/loading.gif') no-repeat center; 
+  height: 150px;
+}
+</style>
+<script>
+$(document).ready(function(){
+  filter_district();
+  function filter_district()
+  {
+    
+    $('.filter_district').html('<div id="loading" style="" ></div>');
+      var action = 'fetch_data';
+      var property_type = $('#district').val();
 
-<h3 data-role="filter_type" style="margin-left:125px;">Showing all properties</h3>
-<section data-role="property_info" data-showing="not_showing">
+      $.ajax({
+          url:"/fetchrecords",
+          method:"POST",
+          data:{action:action, district:district},
+          success:function(data){
+              $('.filter_district').html(data);
+              $(".filter_district").append(data.htmlresponse);
+          }
+      });
+  }
+
+  filter_type();
+  function filter_type()
+  {
+    
+    $('.filter_type').html('<div id="loading" style="" ></div>');
+      var action = 'fetch_data';
+      var property_type = $('#property_type').val();
+
+      $.ajax({
+          url:"/fetchrecords",
+          method:"POST",
+          data:{action:action, property_type:property_type},
+          success:function(data){
+              $('.filter_type').html(data);
+              $(".filter_type").append(data.htmlresponse);
+          }
+      });
+  }
+
+  filter_bedroom();
+  function filter_bedroom()
+  {
+    
+    $('.filter_bedroom').html('<div id="loading" style="" ></div>');
+      var action = 'fetch_data';
+      var property_type = $('#bedroom').val();
+
+      $.ajax({
+          url:"/fetchrecords",
+          method:"POST",
+          data:{action:action, bedroom:bedroom},
+          success:function(data){
+              $('.filter_bedroom').html(data);
+              $(".filter_bedroom").append(data.htmlresponse);
+          }
+      });
+  }
+
+  filter_data();
+  function filter_data()
+  {
+      $('.filter_data').html('<div id="loading" style="" ></div>');
+      var action = 'fetch_data';
+      var minimum_price = $('#hidden_minimum_price').val();
+      var maximum_price = $('#hidden_maximum_price').val();
+      $.ajax({
+          url:"/fetchrecords",
+          method:"POST",
+          data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price},
+          success:function(data){
+              $('.filter_data').html(data);
+              $(".filter_data").append(data.htmlresponse);
+          }
+      });
+  }
+  $('#price_range').slider({
+      range:true,
+      min:100000,
+      max:3000000,
+      values:[100000, 3000000],
+      step:50,
+      stop:function(event, ui)
+      {
+          $('#price_show').html('S$' + ui.values[0] + ' - ' + 'S$' + ui.values[1]);
+          $('#hidden_minimum_price').val(ui.values[0]);
+          $('#hidden_maximum_price').val(ui.values[1]);
+          filter_data();
+      }
+  });
+});
+</script>
+
+<!-- <div class="container">
+    &nbsp;
+   
+      &nbsp;
+</div> -->
+
+<!-- <h3 data-role="filter_type" style="margin-left:125px;">Showing all properties</h3>
+<section data-role="property_info" data-showing="not_showing"> -->
+
+  <!-- <div class="card mb-3 card-columns mx-auto d-flex justify-content-center col-12" style="width: 70rem;">
+    <img src="https://picsum.photos/200" style=" width: 100%; height: 15vw; object-fit: cover;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Housing A</h5>
+      <p class="card-text">District: Woodlands </p>
+      <p class="card-text">Woodlands Ave 2 Block 654 #02-022</p>
+      <p class="card-text">5 <i class="fa fa-solid fa-bed"></i> &nbsp; S$650 000  </p>
+      <p class="card-text"><small class="text-muted">Listed by Bruno Mars</small>      <a href="/details" class="btn btn-primary" style="float: right;">More Details</a></p>
+
+    </div>
+  </div> -->
 
 </section>
 
