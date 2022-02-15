@@ -24,10 +24,9 @@ Properties on Sale
     <h1>Properties on Sale</h1> 
   </div>
   <br />
-  <div class="row row-cols-lg-auto g-3 align-items-center" style="width: 50rem;">
+  <!-- <div class="row row-cols-lg-auto g-3 align-items-center" style="width: 50rem;">
 
-    <h3>&nbsp Filter Search</h3>
-    <div class="col-12">
+    <div class="col-9">
         <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
         <select class="form-select" id="district">
           <option selected>All Districts</option>
@@ -63,7 +62,7 @@ Properties on Sale
         </select>
       </div>
 
-    <div class="col-12">
+    <div class="col-9">
         <label class="visually-hidden" data-role="type-select" data-action="choose_type" for="inlineFormSelectPref">Preference</label>
         <select class="form-select" id="property_type">
           <option selected="All Types">All Property Types</option>
@@ -73,7 +72,7 @@ Properties on Sale
         </select>
       </div>
   
-    <div class="col-12">
+    <div class="col-9">
       <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
       <select class="form-select" id="bedroom">
         <option selected>All Bedroom</option>
@@ -83,15 +82,10 @@ Properties on Sale
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-    </div>
-
-  
-    <!-- <div class="col-12">
-      <button type="submit" class="btn btn-primary">Filter</button>
     </div> -->
-  </div>
 
-      <div class="col-md-3">                                
+
+      <div class="col-6">                                
           <div class="list-group">
               <h2 style="padding-top: 30px;">Price</h2>
               <input type="hidden" id="hidden_minimum_price" value="300000" />
@@ -99,14 +93,15 @@ Properties on Sale
               <p id="price_show">S$300 000 - S$4 000 000</p>
               <div id="price_range"></div>
           </div>                
-          <div class="col-md-9">
-            <div class="row filter_data">
-         </div>
+         
       </div>
-      
-  </div>
-
-
+      &nbsp;
+      <br/>
+      <div class="column">
+        <div class="row filter_data">
+        </div>
+      </div>
+</div>
   <style>
   #loading
   {

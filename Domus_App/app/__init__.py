@@ -20,12 +20,12 @@ mysql = MySQL(app)
  
 @app.route('/')
 def listings(): 
-    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cur.execute("SELECT * FROM listing")
-    datas = cur.fetchall()
-    cur.close()
-    print(datas)
-    return render_template('listings.html', data = datas)
+    # cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    # cur.execute("SELECT * FROM listing")
+    # datas = cur.fetchall()
+    # cur.close()
+    # print(datas)
+    return render_template('listings.html')
  
 @app.route("/fetchrecords",methods=["POST","GET"])
 def fetchrecords():
