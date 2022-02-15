@@ -13,7 +13,7 @@ router = Blueprint('router', __name__, template_folder='templates')
 
 # This will help to render the navigation bar items [(href, id, caption)]
 # Set active_page = id
-pages = [('router.index', 'index', 'Index')]
+pages = [('router.index', 'index', 'Index'), ('router.listings', 'listings', 'Listings')]
 admin_pages = [('router.admin_ticket', 'ticketing', 'Ticketing')]
 
 
@@ -25,6 +25,10 @@ s3 = boto3.resource('s3')
 @router.route('/')
 def index():
     return render_template("index.html", navigation_bar = pages, active_page='index'), 200
+
+@router.route('/listings')
+def listings():
+    return render_template("listings.html", navigation_bar = pages, active_page='listings'), 200
 
 @router.route('/admin')
 def admin_index():
