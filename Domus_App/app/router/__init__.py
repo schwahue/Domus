@@ -1,13 +1,13 @@
 from flask import Blueprint, render_template, request, flash, url_for, redirect, session, jsonify
 from sqlalchemy import true
-from webapp.models.product import Product
-from webapp.models.listing import Listing
-from webapp import listing_schema, listings_schema
+from app.models.product import Product
+from app.models.listing import Listing
+from app import listing_schema, listings_schema
 import boto3, logging
 from werkzeug.utils import secure_filename
 
 import os
-from webapp import db, dropzone, app
+from app import db, dropzone, app
 
 router = Blueprint('router', __name__, template_folder='templates')
 

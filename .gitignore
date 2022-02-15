@@ -162,8 +162,6 @@ Domus_App/webapp/templates/libraries/splide.min.js
 ecp_venv/*
 ecp_venv\*
 *.exe
-*.exe
-*.exe
 ecp_venv/Scripts/activate
 ecp_venv/Scripts/activate.bat
 Domus_App/webapp/templates/libraries/splide.min.css
@@ -171,5 +169,4 @@ Domus_App/webapp/templates/libraries/splide.min.js
 Domus_App/webapp/templates/libraries/splide.min.css
 Domus_App/webapp/templates/libraries/splide.min.js
 *.exe
-Domus_App/webapp/templates/libraries/splide.min.css
 Domus_App/webapp/templates/libraries/splide.min.css

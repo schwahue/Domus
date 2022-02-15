@@ -1,5 +1,5 @@
 from ctypes import addressof
-from webapp import db, ma 
+from app import db, ma 
 
 # Listing Class/Model
 

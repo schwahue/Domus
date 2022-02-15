@@ -1,4 +1,4 @@
-from webapp import db, ma 
+from app import db, ma 
 
 # Product Class/Model
 class Product(db.Model):

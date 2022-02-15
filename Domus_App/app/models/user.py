@@ -1,4 +1,4 @@
-from webapp import db, ma 
+from app import db, ma 
 
 # User Class/Model
 class User(db.Model):

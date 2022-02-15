@@ -11,7 +11,7 @@ import os
 
 
 # Import helper functions module
-from webapp.helpers import helper
+from app.helpers import helper
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'super secret key'
@@ -62,12 +62,12 @@ def internal_server_errer(e):
     return render_template("errors/500.html"), 500
 
 
-from webapp.models.listing import ListingSchema
+from app.models.listing import ListingSchema
 listing_schema = ListingSchema()
 listings_schema = ListingSchema(many=True)
 
 # Always put the router import, and blueprint registration after the db table schema init otherwise we get circular import error
-from webapp import router
+from app import router
 app.register_blueprint(router.router)
 
 
