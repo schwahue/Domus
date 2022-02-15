@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Splide Test
+{% endblock %}
+
+{% block head %}
+{# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css" integrity="sha256-sB1O2oXn5yaSW1T/92q2mGU86IDhZ0j1Ya8eSv+6QfM=" crossorigin="anonymous"> #}
+ {% endblock %}
+
+
+
+
+{% block content %}
+<div class="container">
+{% include 'flash/flashmessage.html'%}
+
+
+
+<div id="main-slider" class="splide">
+  <div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">
+				<img src="" alt="pic 1">
+			</li>
+			<li class="splide__slide">
+				<img src="" alt="pic 2">
+			</li>
+			<li class="splide__slide">
+				<img src="" alt="pic 3">
+			</li>
+		</ul>
+  </div>
+</div>
+
+<div id="thumbnail-slider" class="splide">
+  <div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">
+				<img src="" alt="pic 1">
+			</li>
+			<li class="splide__slide">
+				<img src="" alt="pic 2">
+			</li>
+			<li class="splide__slide">
+				<img src="" alt="pic 3">
+			</li>
+		</ul>
+  </div>
+</div>
+
+<script>
+
+
+
+document.addEventListener( 'DOMContentLoaded', function () {
+  var main = new Splide( '#main-slider', {
+    type      : 'fade',
+    rewind    : true,
+    pagination: false,
+    arrows    : false,
+  } );
+
+  var thumbnails = new Splide( '#thumbnail-slider', {
+    fixedWidth  : 100,
+    fixedHeight : 60,
+    gap         : 10,
+    rewind      : true,
+    pagination  : false,
+    cover       : true,
+    isNavigation: true,
+  } );
+
+  main.sync( thumbnails );
+  main.mount();
+  thumbnails.mount();
+} );
+</script>
+
+    {# <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js" integrity="sha256-b/fLMBwSqO9vy/phDPv6OufPpR+VfUL+OsTEkJMPg+Q=" crossorigin="anonymous"></script> #}
+
+<style>
+.splide__slide {
+  opacity: 0.3;
+}
+
+.splide__slide.is-active {
+  opacity: 1;
+}
+
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
+</style>
+{% endblock %}

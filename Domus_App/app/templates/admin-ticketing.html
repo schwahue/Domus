@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Ticketing
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            Ticket No.
+        </div>
+        <div class="col">
+            Description
+        </div>
+        <div class="col">
+            Status
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+    {% for ticketId, ticketDesp, ticketStat in ticketList %}
+        <div class="row">
+            <div class="col">
+                {{ticketId}}
+            </div>
+            <div class="col">
+                {{ticketDesp}}
+            </div>
+            <div class="col">
+                {{ticketStat}}
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" type="button">Edit</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-danger" type="button">Delete</button>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+View Listings
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="container">
+{% include 'flash/flashmessage.html'%}
+
+
+  <div class="row">
+    <div class="col-12">
+		<table class="table table-image">
+		  <thead>
+		    <tr>
+		      <th scope="col"></th>
+		      <th scope="col">Listing Name</th>
+		      <th scope="col">Listing type</th>
+		      <th scope="col">Property type</th>
+		      <th scope="col">Price</th>
+			<th scope="col"></th>
+						<th scope="col"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+          
+{% for i in result %}
+		    <tr>
+		      <td class="w-25">
+              <a href="/user/viewlisting/{{i['id']}}">
+			      <img src="{{get_first_s3image_url(i['s3_object_link'])}}" class="img-fluid img-thumbnail" alt="S3 Image here">
+                  </a>
+		      </td>
+		      <td><a href="/user/viewlisting/{{i['id']}}"> {{i['name']}} </a></td>
+		      <td>{{i['listing_type']}}</td>
+		      <td>{{i['property_type']}}</td>
+		      <td>{{format_currency(i["price"])}}</td>
+			<td><form action="{{ url_for('router.update_listing', id=i['id']) }}" method="GET"> <button type="submit" class="btn btn-warning">Update Listing</button> </form></td>
+			<td><form action="{{ url_for('router.delete_listing', id=i['id']) }}" method="POST"> <button type="submit" class="btn btn-danger">Delete Listing</button> </form></td>
+		    </tr>
+            {% endfor %}
+		  </tbody>
+		</table>   
+    </div>
+  </div>
+
+
+
+</div>
+
+
+<style>
+
+.container {
+  padding: 2rem 0rem;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+.table-image {
+  td, th {
+    vertical-align: middle;
+  }
+}
+
+</style>
+{% endblock %}

@@ -4,6 +4,7 @@ autopep8==1.6.0
 click==8.0.3
 Flask==2.0.2
 flask-restplus==0.13.0
+flask-marshmallow==0.14.0
 Flask-SQLAlchemy==2.5.1
 greenlet==1.1.2
 itsdangerous==2.0.1
