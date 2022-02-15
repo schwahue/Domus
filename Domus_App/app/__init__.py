@@ -3,7 +3,9 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_dropzone import Dropzone
-
+from app import app
+from flask import Flask, render_template, request, jsonify
+from flask_mysqldb import MySQL,MySQLdb #pip install flask-mysqldb
 
 # Module to retrieve environment variables
 import os
@@ -50,13 +52,6 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
 
-
-from ctypes import addressof
-from app import app
-from flask import Flask, render_template, request, jsonify
-from flask_mysqldb import MySQL,MySQLdb #pip install flask-mysqldb
-
-app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = 'ecp-db-instance.cnsgbbbzr71l.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_USER'] = 'admin'
@@ -105,9 +100,6 @@ def not_found(e):
 
 @app.errorhandler(500)
 def internal_server_errer(e):
-<<<<<<< HEAD
-    return render_template("errors/500.html"), 500
-=======
     return render_template("errors/500.html"), 500
 
 
@@ -121,4 +113,3 @@ app.register_blueprint(router.router)
 
 
 # TODO: refactor to factory pattern
->>>>>>> development
