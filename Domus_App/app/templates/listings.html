@@ -13,6 +13,7 @@ Properties on Sale
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -93,16 +94,63 @@ Properties on Sale
       <div class="col-md-3">                                
           <div class="list-group">
               <h2 style="padding-top: 30px;">Price</h2>
-              <input type="hidden" id="hidden_minimum_price" value="0" />
-              <input type="hidden" id="hidden_maximum_price" value="65000" />
-              <p id="price_show">S$100 000 - S$3 000 000</p>
+              <input type="hidden" id="hidden_minimum_price" value="300000" />
+              <input type="hidden" id="hidden_maximum_price" value="4000000" />
+              <p id="price_show">S$300 000 - S$4 000 000</p>
               <div id="price_range"></div>
           </div>                
+          <div class="col-md-9">
+            <div class="row filter_data">
+         </div>
       </div>
-      <div class="col-md-9">
-         <div class="row filter_data">
-      </div>
+      
   </div>
+
+
+  <style>
+  #loading
+  {
+    text-align:center; 
+    background: url('images/loading.gif') no-repeat center; 
+    height: 150px;
+  }
+  </style>
+  <script>
+  $(document).ready(function(){
+    filter_data();
+  function filter_data()
+  {
+      $('.filter_data').html('<div id="loading" style="" ></div>');
+      var action = 'fetch_data';
+      var minimum_price = $('#hidden_minimum_price').val();
+      var maximum_price = $('#hidden_maximum_price').val();
+      $.ajax({
+          url:"/fetchrecords",
+          method:"POST",
+          data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price},
+          success:function(data){
+              $('.filter_data').html(data);
+              $(".filter_data").append(data.htmlresponse);
+          }
+      });
+  }
+  $('#price_range').slider({
+      range:true,
+      min:100000,
+      max:3000000,
+      values:[100000, 3000000],
+      step:50,
+      stop:function(event, ui)
+      {
+          $('#price_show').html('S$' + ui.values[0] + ' - ' + 'S$' + ui.values[1]);
+          $('#hidden_minimum_price').val(ui.values[0]);
+          $('#hidden_maximum_price').val(ui.values[1]);
+          filter_data();
+      }
+  });
+});
+  </script>
+
   </div>
 </div>
 <style>
@@ -191,9 +239,9 @@ $(document).ready(function(){
   }
   $('#price_range').slider({
       range:true,
-      min:100000,
-      max:3000000,
-      values:[100000, 3000000],
+      min:300000,
+      max:4000000,
+      values:[300000, 4000000],
       step:50,
       stop:function(event, ui)
       {
@@ -205,28 +253,24 @@ $(document).ready(function(){
   });
 });
 </script>
-
-<!-- <div class="container">
-    &nbsp;
-   
-      &nbsp;
-</div> -->
-
-<!-- <h3 data-role="filter_type" style="margin-left:125px;">Showing all properties</h3>
-<section data-role="property_info" data-showing="not_showing"> -->
-
-  <!-- <div class="card mb-3 card-columns mx-auto d-flex justify-content-center col-12" style="width: 70rem;">
-    <img src="https://picsum.photos/200" style=" width: 100%; height: 15vw; object-fit: cover;" class="card-img-top" alt="...">
+  &nbsp;
+  {% for i in data %} 
+  <div class="card mb-3 card-columns mx-auto d-flex justify-content-center col-12" style="width: 70rem;">
+    <img src="{{i['s3_object_link']}}" style=" width: 100%; height: 15vw; object-fit: cover; background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 350px;" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Housing A</h5>
-      <p class="card-text">District: Woodlands </p>
-      <p class="card-text">Woodlands Ave 2 Block 654 #02-022</p>
-      <p class="card-text">5 <i class="fa fa-solid fa-bed"></i> &nbsp; S$650 000  </p>
-      <p class="card-text"><small class="text-muted">Listed by Bruno Mars</small>      <a href="/details" class="btn btn-primary" style="float: right;">More Details</a></p>
-
+        <h5 class="card-title">{{i['name']}}</h5>
+        <p class="card-text">District: {{i['district']}} </p>
+        <p class="card-text">{{i['address']}}</p>
+        <p class="card-text">S${{i['price']}}</p>
+        <p class="card-text">{{i['bedroom']}} <i class="fa fa-solid fa-bed"></i> &nbsp; S$650 000  </p>
+        <p class="card-text"><small class="text-muted">Listed by {{i['name']}}</small>      <a href="/details/{{i['id']}}" class="btn btn-primary" style="float: right;">More Details</a></p>
+  
     </div>
-  </div> -->
-
+  </div>
+{% endfor %} 
 </section>
 
 
