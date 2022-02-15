@@ -1,0 +1,226 @@
+[
+    {
+        "label": "addressof",
+        "importPath": "ctypes",
+        "description": "ctypes",
+        "isExtraImport": true,
+        "detail": "ctypes",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "webapp",
+        "description": "webapp",
+        "isExtraImport": true,
+        "detail": "webapp",
+        "documentation": {}
+    },
+    {
+        "label": "ma",
+        "importPath": "webapp",
+        "description": "webapp",
+        "isExtraImport": true,
+        "detail": "webapp",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "webapp",
+        "description": "webapp",
+        "isExtraImport": true,
+        "detail": "webapp",
+        "documentation": {}
+    },
+    {
+        "label": "ma",
+        "importPath": "webapp",
+        "description": "webapp",
+        "isExtraImport": true,
+        "detail": "webapp",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "webapp",
+        "description": "webapp",
+        "isExtraImport": true,
+        "detail": "webapp",
+        "documentation": {}
+    },
+    {
+        "label": "ma",
+        "importPath": "webapp",
+        "description": "webapp",
+        "isExtraImport": true,
+        "detail": "webapp",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "webapp",
+        "description": "webapp",
+        "isExtraImport": true,
+        "detail": "webapp",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "pformat",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "jmespath",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "jmespath",
+        "description": "jmespath",
+        "detail": "jmespath",
+        "documentation": {}
+    },
+    {
+        "label": "exceptions",
+        "importPath": "jmespath",
+        "description": "jmespath",
+        "isExtraImport": true,
+        "detail": "jmespath",
+        "documentation": {}
+    },
+    {
+        "label": "render_flash_msg_icon",
+        "kind": 2,
+        "importPath": "Domus_App.webapp.helpers.helper",
+        "description": "Domus_App.webapp.helpers.helper",
+        "peekOfCode": "def render_flash_msg_icon(category_type):\n    match category_type:\n        case \"primary\":\n            return \"#info-fill\"\n        case \"success\":\n            return \"#check-circle-fill\"\n        case \"warning\":\n            return \"#exclamation-triangle-fill\"\n        case \"danger\":\n            return \"#exclamation-triangle-fill\"",
+        "detail": "Domus_App.webapp.helpers.helper",
+        "documentation": {}
+    },
+    {
+        "label": "format_currency",
+        "kind": 2,
+        "importPath": "Domus_App.webapp.helpers.helper",
+        "description": "Domus_App.webapp.helpers.helper",
+        "peekOfCode": "def format_currency(value):\n    output = \"${:,.2f}\".format(value)\n    return output\ndef print_something(value):\n    output = value + \"new\"\n    return output\ndef get_first_s3image_url(url):\n    url_list = url.split(\";\")\n    print(url_list)\n    return url_list[0]",
+        "detail": "Domus_App.webapp.helpers.helper",
+        "documentation": {}
+    },
+    {
+        "label": "print_something",
+        "kind": 2,
+        "importPath": "Domus_App.webapp.helpers.helper",
+        "description": "Domus_App.webapp.helpers.helper",
+        "peekOfCode": "def print_something(value):\n    output = value + \"new\"\n    return output\ndef get_first_s3image_url(url):\n    url_list = url.split(\";\")\n    print(url_list)\n    return url_list[0]\ndef get_s3_imageurl_list(url):\n    url_list = url.split(\";\")\n    return url_list",
+        "detail": "Domus_App.webapp.helpers.helper",
+        "documentation": {}
+    },
+    {
+        "label": "get_first_s3image_url",
+        "kind": 2,
+        "importPath": "Domus_App.webapp.helpers.helper",
+        "description": "Domus_App.webapp.helpers.helper",
+        "peekOfCode": "def get_first_s3image_url(url):\n    url_list = url.split(\";\")\n    print(url_list)\n    return url_list[0]\ndef get_s3_imageurl_list(url):\n    url_list = url.split(\";\")\n    return url_list",
+        "detail": "Domus_App.webapp.helpers.helper",
+        "documentation": {}
+    },
+    {
+        "label": "get_s3_imageurl_list",
+        "kind": 2,
+        "importPath": "Domus_App.webapp.helpers.helper",
+        "description": "Domus_App.webapp.helpers.helper",
+        "peekOfCode": "def get_s3_imageurl_list(url):\n    url_list = url.split(\";\")\n    return url_list",
+        "detail": "Domus_App.webapp.helpers.helper",
+        "documentation": {}
+    },
+    {
+        "label": "Listing",
+        "kind": 6,
+        "importPath": "Domus_App.webapp.models.listing",
+        "description": "Domus_App.webapp.models.listing",
+        "peekOfCode": "class Listing(db.Model):\n  id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)\n  name = db.Column(db.String(100), unique=True)\n  description = db.Column(db.String(200))\n  price = db.Column(db.Float)\n  price_type = db.Column(db.String)\n  # For sale / For rent / Room rental etc\n  listing_type = db.Column(db.String)\n  # HDB / Condo / Bungalow etc..\n  property_type = db.Column(db.String)",
+        "detail": "Domus_App.webapp.models.listing",
+        "documentation": {}
+    },
+    {
+        "label": "ListingSchema",
+        "kind": 6,
+        "importPath": "Domus_App.webapp.models.listing",
+        "description": "Domus_App.webapp.models.listing",
+        "peekOfCode": "class ListingSchema(ma.Schema):\n  class Meta:\n    fields = ('id', 'name', 'description', 'price', 'price_type', 'listing_type', 'property_type', 's3_object_link', 'virtual_tour_url', 'district', 'address', 'bedroom', 'listed_by')",
+        "detail": "Domus_App.webapp.models.listing",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "kind": 6,
+        "importPath": "Domus_App.webapp.models.product",
+        "description": "Domus_App.webapp.models.product",
+        "peekOfCode": "class Product(db.Model):\n  id = db.Column(db.Integer, primary_key=True)\n  name = db.Column(db.String(100), unique=True)\n  description = db.Column(db.String(200))\n  price = db.Column(db.Float)\n  qty = db.Column(db.Integer)\n  def __init__(self, name, description, price, qty):\n    self.name = name\n    self.description = description\n    self.price = price",
+        "detail": "Domus_App.webapp.models.product",
+        "documentation": {}
+    },
+    {
+        "label": "ProductSchema",
+        "kind": 6,
+        "importPath": "Domus_App.webapp.models.product",
+        "description": "Domus_App.webapp.models.product",
+        "peekOfCode": "class ProductSchema(ma.Schema):\n  class Meta:\n    fields = ('id', 'name', 'description', 'price', 'qty')",
+        "detail": "Domus_App.webapp.models.product",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "Domus_App.webapp.models.user",
+        "description": "Domus_App.webapp.models.user",
+        "peekOfCode": "class User(db.Model):\n  id = db.Column(db.Integer, primary_key=True)\n  name = db.Column(db.String(100), unique=True)\n  description = db.Column(db.String(200))\n  price = db.Column(db.Float)\n  qty = db.Column(db.Integer)\n  def __init__(self, name, description, price, qty):\n    self.name = name\n    self.description = description\n    self.price = price",
+        "detail": "Domus_App.webapp.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "ListingSchema",
+        "kind": 6,
+        "importPath": "Domus_App.webapp.models.user",
+        "description": "Domus_App.webapp.models.user",
+        "peekOfCode": "class ListingSchema(ma.Schema):\n  class Meta:\n    fields = ('id', 'name', 'description', 'price', 'qty')",
+        "detail": "Domus_App.webapp.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "ecp_venv.Scripts.jp",
+        "description": "ecp_venv.Scripts.jp",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('expression')\n    parser.add_argument('-f', '--filename',\n                        help=('The filename containing the input data.  '\n                              'If a filename is not given then data is '\n                              'read from stdin.'))\n    parser.add_argument('--ast', action='store_true',\n                        help=('Pretty print the AST, do not search the data.'))\n    args = parser.parse_args()",
+        "detail": "ecp_venv.Scripts.jp",
+        "documentation": {}
+    }
+]

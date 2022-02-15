@@ -128,4 +128,5 @@ Resources:
       Tags:
         - Key: Name
           Value: PublicInstanceSG
-# Need to add
+# Need to add RDS
+# Need to add S3
