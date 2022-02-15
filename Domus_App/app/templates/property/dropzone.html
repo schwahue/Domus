@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Test dropzone
+{% endblock %}
+
+{% block head %} 
+{{ dropzone.load_css() }}
+{{ dropzone.style('border: 2px dashed #0087F7; margin: 10%; min-height: 400px;') }}
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+{% include 'flash/flashmessage.html'%}
+
+
+
+
+
+<form action="{{url_for('router.view_dropzone')}}"class="dropzone" id="mydz" method="post">
+</form>
+<button type="submit" id="submitFormBtn" class="btn btn-primary">Submit</button>
+
+
+
+<script>
+
+
+function loadedDZ() {
+    console.log("Loaded DropZone")
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+let uploader = Dropzone.options.mydz = {
+          init: function() {
+                // redirect after queue complete
+                // upload queue when button click
+              loadedDZ();  // custom init code
+          },
+          addedfile: file => {
+            console.log("Added File")
+          },
+            // click upload options
+          addRemoveLinks: true,
+          uploadMultiple: true,
+          parallelUploads: 2,
+          paramName: "file", // The name that will be used to transfer the file
+          maxFilesize: 5, // MB
+          acceptedFiles: ".jpg, .png, .webp",
+          maxFiles: 5,
+          dictDefaultMessage: `Drop images here in .jpg, .png or .webp format`, // message display on drop area
+          dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
+          dictInvalidFileType: "You can't upload files of this type.",
+          dictFileTooBig: "File is too big {{filesize}}. Max filesize: {{maxFilesize}}MiB.",
+          dictResponseError: "Server error: {{statusCode}}",
+          dictMaxFilesExceeded: "You can't upload any more files.",
+          dictCancelUpload: "Cancel upload",
+          dictRemoveFile: "Remove file",
+          dictCancelUploadConfirmation: "You really want to delete this file?",
+          dictUploadCanceled: "Upload canceled",
+          autoProcessQueue: false
+            // custom options code
+        };
+
+
+
+        
+});
+
+
+function uploadfile(uploader) {
+      console.log("Uploading...")
+} 
+/* document.getElementById("submitFormBtn").onsubmit = function (e) {
+    console.log("Prevent redirect first...")
+    e.preventDefault();
+    console.log("Upload first first...")
+    uploadfile();
+    console.log("Redirect!")
+    document.getElementById('submitFormBtn').submit();
+}
+
+*/
+
+
+</script>
+
+
+
+{{ dropzone.load_js() }}
+
+
+
+
+{% endblock %}

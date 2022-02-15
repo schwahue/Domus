@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Properties on Sale
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="header"> 
+        <h1>Properties on Sale</h1> 
+    </div>
+    &nbsp;
+    <form class="row row-cols-lg-auto g-3 align-items-center">
+
+
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+            <select class="form-select" id="inlineFormSelectPref">
+              <option selected>All Districts</option>
+              <option value="Boat Quay, Chinatown, Havelock Road,Marina Square, Raffles Place, Suntec City">Boat Quay, Chinatown, Havelock Road, Marina Square, Raffles Place, Suntec City</option>
+              <option value="Anson Road, Chinatown, Neil Road, Raffles Place, Shenton Way, Tanjong Pagar">Anson Road, Chinatown, Neil Road, Raffles Place, Shenton Way, Tanjong Pagar</option>
+              <option value="Alexandra Road, Tiong Bahru, Queenstownu">Alexandra Road, Tiong Bahru, Queenstown</option>
+              <option value="Keppel, Mount Faber, Sentosa, Telok Blangah">Keppel, Mount Faber, Sentosa, Telok Blangah</option>
+              <option value="Buona Vista, Dover, Pasir Panjang, West Coast">Buona Vista, Dover, Pasir Panjang, West Coast</option>
+              <option value="City Hall, High Street, North Bridge Road">City Hall, High Street, North Bridge Road</option>
+              <option value="Beach Road, Bencoolen Road, Bugis, Rochor">Beach Road, Bencoolen Road, Bugis, Rochor</option>
+              <option value="Little India, Farrer Park, Serangoon Road">Little India, Farrer Park, Serangoon Road</option>
+              <option value="Cairnhill, Killiney, Leonie Hill, Orchard, Oxley">Cairnhill, Killiney, Leonie Hill, Orchard, Oxley</option>
+              <option value="Balmoral, Bukit Timah, Grange Road, Holland, Orchard Boulevard, River Valley, Tanglin Road">Balmoral, Bukit Timah, Grange Road, Holland, Orchard Boulevard, River Valley, Tanglin Road</option>
+              <option value="Chancery, Bukit Timah, Dunearn Road, Newton">Chancery, Bukit Timah, Dunearn Road, Newton</option>
+              <option value="Balestier, Moulmein, Novena, Toa Payoh">Balestier, Moulmein, Novena, Toa Payoh</option>
+              <option value="Balestier, Toa Payoh, Serangoon">Balestier, Toa Payoh, Serangoon</option>
+              <option value="Potong Pasir, Machpherson">Potong Pasir, Machpherson</option>
+              <option value="Eunos, Geylang, Kembangan, Paya Lebar">Eunos, Geylang, Kembangan, Paya Lebar</option>
+              <option value="Katong, Marine Parade, Siglap, Tanjong Rhu">Katong, Marine Parade, Siglap, Tanjong Rhu</option>
+              <option value="Bayshore, Bedok, Chai Chee">Bayshore, Bedok, Chai Chee</option>
+              <option value="Loyang, Changi">Loyang, Changi</option>
+              <option value="Pasir Ris, Simei, Tampines">Pasir Ris, Simei, Tampines</option>
+              <option value="Hougang, Punggol, Sengkang">Hougang, Punggol, Sengkang</option>
+              <option value="Ang Mo Kio, Bishan, Braddell Road, Thomson">Ang Mo Kio, Bishan, Braddell Road, Thomson</option>
+              <option value="Clementi, Upper Bukit Timah, Hume Avenue">Clementi, Upper Bukit Timah, Hume Avenue</option>
+              <option value="Boon Lay, Jurong, Tuas">Boon Lay, Jurong, Tuas</option>
+              <option value="Bukit Batok, Choa Chu Kang, Hillview Avenue, Upper Bukit Timah">Bukit Batok, Choa Chu Kang, Hillview Avenue, Upper Bukit Timah</option>
+              <option value="Kranji, Lim Chu Kang, Sungei Gedong, Tengah">Kranji, Lim Chu Kang, Sungei Gedong, Tengah</option>
+              <option value="Admiralty, Woodlands">Admiralty, Woodlands</option>
+              <option value="Tagore, Yio Chu Kang">Tagore, Yio Chu Kang</option>
+              <option value="Yishun, Sembawang">Yishun, Sembawang</option>
+              <option value="Seletar">Seletar</option>
+            </select>
+          </div>
+
+        <div class="col-12">
+            <label class="visually-hidden" data-role="type-select" data-action="choose_type" for="inlineFormSelectPref">Preference</label>
+            <select class="form-select" id="inlineFormSelectPref">
+              <option selected="All Types">All Types</option>
+              <option value="Condominium">Condominium</option>
+              <option value="HDB">HDB</option>
+              <option value="Landed">Landed</option>
+            </select>
+          </div>
+      
+        <div class="col-12">
+          <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+          <select class="form-select" id="inlineFormSelectPref">
+            <option selected>All Bedroom</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+            <select class="form-select" id="inlineFormSelectPref">
+              <option selected>Price</option>
+              <option value="$100 000 - $500 000">$100 000 - $500 000</option>
+              <option value="$500 001 - $1 000 000">$500 001 - $1 000 000</option>
+              <option value="$1 000 001 - $2 000 000">$1 000 001 - $2 000 000</option>
+              <option value=">$2 000 000">More than $2 000 000</option>
+            </select>
+          </div>
+      
+        <!-- <div class="col-12">
+          <button type="submit" class="btn btn-primary">Filter</button>
+        </div> -->
+      </form>
+
+      &nbsp;
+
+    <!-- <div class="card" style="width: 80rem;">
+        <img src="..." class="card-img-top" alt="Image goes here">
+        <div class="card-header">
+            <b>Choa Chu Kang</b>
+        </div>
+        <div class="card-body">
+        <h5 class="card-title">Choa Chu Kang Ave 5 #11-589</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p>Listed by: Mr Ben Tan</p>
+        <a href="#" class="btn btn-primary" style="float: right;">More Details</a>
+        </div>
+  </div> -->
+</div>
+
+<h3 data-role="filter_type" style="margin-left:125px;">Showing all properties</h3>
+<section data-role="property_info" data-showing="not_showing">
+
+</section>
+
+
+<script src="config.js"></script>
+<script src="jquery-3.4.0.min.js"></script>
+<script src="listings.js"></script>
+
+{% endblock %}

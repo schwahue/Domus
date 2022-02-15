@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create Listing
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="container">
+{% include 'flash/flashmessage.html'%}
+<form action="{{ url_for('router.create_listing') }}" method="POST" enctype=multipart/form-data>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Listing Name: </label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="form_listing_name">
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Listing Description:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="form_listing_description">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Price:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="form_listing_price">
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Price type:</label>
+  <select class="form-select" id="exampleFormControlInput1" name="form_listing_price_type">
+            <option value="One-Time">One-Time</option>
+            <option value="Monthly">Monthly</option>
+  </select>
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Listing type:</label>
+  <select class="form-select" id="exampleFormControlInput1" name="form_listing_type">
+            <option value="Sale">Sale</option>
+            <option value="Rent">Rent</option>
+  </select>
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Property type:</label>
+  <select class="form-select" id="exampleFormControlInput1" name="form_property_type">
+            <option value="HDB">HDB</option>
+            <option value="Condominium">Condominium</option>
+            <option value="Bungalow">Bungalow</option>
+            <option value="Terrace">Terrace</option>
+  </select>
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Upload photo</label>
+  <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="" name="form_photo" multiple accept="image/jpeg">
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Link of virtual tour:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="form_virtual_tour_url">
+</div>
+
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">District:</label>
+  <select class="form-select" id="exampleFormControlInput1" name="form_district">
+              <option value="Boat Quay, Chinatown, Havelock Road,Marina Square, Raffles Place, Suntec City">Boat Quay, Chinatown, Havelock Road, Marina Square, Raffles Place, Suntec City</option>
+              <option value="Anson Road, Chinatown, Neil Road, Raffles Place, Shenton Way, Tanjong Pagar">Anson Road, Chinatown, Neil Road, Raffles Place, Shenton Way, Tanjong Pagar</option>
+              <option value="Alexandra Road, Tiong Bahru, Queenstownu">Alexandra Road, Tiong Bahru, Queenstown</option>
+              <option value="Keppel, Mount Faber, Sentosa, Telok Blangah">Keppel, Mount Faber, Sentosa, Telok Blangah</option>
+              <option value="Buona Vista, Dover, Pasir Panjang, West Coast">Buona Vista, Dover, Pasir Panjang, West Coast</option>
+              <option value="City Hall, High Street, North Bridge Road">City Hall, High Street, North Bridge Road</option>
+              <option value="Beach Road, Bencoolen Road, Bugis, Rochor">Beach Road, Bencoolen Road, Bugis, Rochor</option>
+              <option value="Little India, Farrer Park, Serangoon Road">Little India, Farrer Park, Serangoon Road</option>
+              <option value="Cairnhill, Killiney, Leonie Hill, Orchard, Oxley">Cairnhill, Killiney, Leonie Hill, Orchard, Oxley</option>
+              <option value="Balmoral, Bukit Timah, Grange Road, Holland, Orchard Boulevard, River Valley, Tanglin Road">Balmoral, Bukit Timah, Grange Road, Holland, Orchard Boulevard, River Valley, Tanglin Road</option>
+              <option value="Chancery, Bukit Timah, Dunearn Road, Newton">Chancery, Bukit Timah, Dunearn Road, Newton</option>
+              <option value="Balestier, Moulmein, Novena, Toa Payoh">Balestier, Moulmein, Novena, Toa Payoh</option>
+              <option value="Balestier, Toa Payoh, Serangoon">Balestier, Toa Payoh, Serangoon</option>
+              <option value="Potong Pasir, Machpherson">Potong Pasir, Machpherson</option>
+              <option value="Eunos, Geylang, Kembangan, Paya Lebar">Eunos, Geylang, Kembangan, Paya Lebar</option>
+              <option value="Katong, Marine Parade, Siglap, Tanjong Rhu">Katong, Marine Parade, Siglap, Tanjong Rhu</option>
+              <option value="Bayshore, Bedok, Chai Chee">Bayshore, Bedok, Chai Chee</option>
+              <option value="Loyang, Changi">Loyang, Changi</option>
+              <option value="Pasir Ris, Simei, Tampines">Pasir Ris, Simei, Tampines</option>
+              <option value="Hougang, Punggol, Sengkang">Hougang, Punggol, Sengkang</option>
+              <option value="Ang Mo Kio, Bishan, Braddell Road, Thomson">Ang Mo Kio, Bishan, Braddell Road, Thomson</option>
+              <option value="Clementi, Upper Bukit Timah, Hume Avenue">Clementi, Upper Bukit Timah, Hume Avenue</option>
+              <option value="Boon Lay, Jurong, Tuas">Boon Lay, Jurong, Tuas</option>
+              <option value="Bukit Batok, Choa Chu Kang, Hillview Avenue, Upper Bukit Timah">Bukit Batok, Choa Chu Kang, Hillview Avenue, Upper Bukit Timah</option>
+              <option value="Kranji, Lim Chu Kang, Sungei Gedong, Tengah">Kranji, Lim Chu Kang, Sungei Gedong, Tengah</option>
+              <option value="Admiralty, Woodlands">Admiralty, Woodlands</option>
+              <option value="Tagore, Yio Chu Kang">Tagore, Yio Chu Kang</option>
+              <option value="Yishun, Sembawang">Yishun, Sembawang</option>
+              <option value="Seletar">Seletar</option>
+            </select>
+</div>
+
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Address:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="form_address">
+</div>
+
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Bedroom:</label>
+  <select class="form-select" id="exampleFormControlInput1" name="form_bedroom">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+  </select>
+</div>
+
+
+<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+
+
+</form>
+</div>
+
+
+{% endblock %}

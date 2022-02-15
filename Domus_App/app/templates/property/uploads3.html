@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Test upload S3
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+<div class="container">
+{% include 'flash/flashmessage.html'%}
+<form action="{{ url_for('router.s3_upload') }}" method="POST" enctype=multipart/form-data>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Upload photo</label>
+  <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="form_photo" multiple accept="image/png,image/jpeg">
+</div>
+
+
+<button type="submit" class="btn btn-primary" value="Submit">Upload photo</button>
+
+
+</form>
+</div>
+{% endblock %}
