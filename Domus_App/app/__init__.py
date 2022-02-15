@@ -3,7 +3,6 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_dropzone import Dropzone
-from app import app
 from flask import Flask, render_template, request, jsonify
 from flask_mysqldb import MySQL,MySQLdb #pip install flask-mysqldb
 
