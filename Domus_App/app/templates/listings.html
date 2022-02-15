@@ -136,9 +136,9 @@ Properties on Sale
   }
   $('#price_range').slider({
       range:true,
-      min:100000,
-      max:3000000,
-      values:[100000, 3000000],
+      min:300000,
+      max:4000000,
+      values:[300000, 4000000],
       step:50,
       stop:function(event, ui)
       {
@@ -264,9 +264,8 @@ $(document).ready(function(){
         <h5 class="card-title">{{i['name']}}</h5>
         <p class="card-text">District: {{i['district']}} </p>
         <p class="card-text">{{i['address']}}</p>
-        <p class="card-text">S${{i['price']}}</p>
-        <p class="card-text">{{i['bedroom']}} <i class="fa fa-solid fa-bed"></i> &nbsp; S$650 000  </p>
-        <p class="card-text"><small class="text-muted">Listed by {{i['name']}}</small>      <a href="/details/{{i['id']}}" class="btn btn-primary" style="float: right;">More Details</a></p>
+        <p class="card-text">{{i['bedroom']}} <i class="fa fa-solid fa-bed"></i> &nbsp;S${{i['price']}} </p>
+        <p class="card-text"><small class="text-muted">Listed by {{i['listed_by']}}</small>      <a href="/details/{{i['id']}}" class="btn btn-primary" style="float: right;">More Details</a></p>
   
     </div>
   </div>

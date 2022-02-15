@@ -154,3 +154,11 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
+
+Terraform/aws_vpc/network/.terraform.lock.hcl
+
+Terraform/aws_vpc/igw.tf
+
+Terraform/listing_lambda_functions/resources/seed.js
+
+Terraform/listing_lambda_functions/resources/property_data.json

@@ -34,40 +34,18 @@ def fetchrecords():
         query = request.form['action']
         minimum_price = request.form['minimum_price']
         maximum_price = request.form['maximum_price']
-        property_type = request.form['property_type']
-        district = request.form['district']
-        bedroom = request.form['bedroom']
         #print(query)
         if query == '':
-            cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cur.execute("SELECT * FROM listing ORDER BY id ASC")
             propertylist = cur.fetchall()
             print('all list')
-
-        elif query == 'property_type':
-            cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cur.execute("SELECT * FROM ECP_DB.listing WHERE property_type = '(%s)';", property_type)
-            propertylist = cur.fetchall()
-            cur.close()
-            print('Property type list', propertylist)
-
-        elif query == 'district':
-            cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cur.execute("SELECT * FROM ECP_DB.listing WHERE district = '(%s)';", district)
-            propertylist = cur.fetchall()
-            print('District list', propertylist)
-
-        elif query == 'bedroom':
-            cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cur.execute("SELECT * FROM ECP_DB.listing WHERE bedroom = '(%s)';", bedroom)
-            propertylist = cur.fetchall()
-            print('Bedroom list', propertylist)
-
         else:
             cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cur.execute("SELECT * FROM listing WHERE price BETWEEN (%s) AND (%s)", [minimum_price, maximum_price])
             propertylist = cur.fetchall()  
+            print("Filtered Data", propertylist)
     return jsonify({'htmlresponse': render_template('response.html', data=propertylist)})
+ 
 
 if __name__ == '__main__':
     app.run(debug=True)
